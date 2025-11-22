@@ -10,10 +10,10 @@
 //Vertices coordinates
 GLfloat vertices[] =
 {
-	-0.5f /*x*/,-0.5f/*y*/,0.0, // Lower left corner
-	-0.5f,0.5f,0.0, //Upper left corner
-	0.5f,0.5f,0.0, //Upper right corner
-	0.5f,-0.5f,0.0 // Lower right corner
+	-0.5f /*x*/,-0.5f/*y*/,0.0, 0.8f,0.1f,0.6f,              // Lower left corner
+	-0.5f,0.5f,0.0, 0.5f,0.8f,0.9f, //Upper left corner
+	0.5f,0.5f,0.0, 0.8f,0.5f,0.1f, //Upper right corner
+	0.5f,-0.5f,0.0,  0.7f,0.0f,0.8f// Lower right corner
 
 };
 
@@ -71,13 +71,15 @@ int main()
 	EBO EBO1(indices, sizeof(indices));
 
 	// Links VBO to VAO
-	VAO1.LinkVBO(VBO1, 0);
+	VAO1.LinkAttrib(VBO1, 0, 3, GL_FLOAT, 6 * sizeof(float), (void*)0);
+	VAO1.LinkAttrib(VBO1, 1, 3, GL_FLOAT, 6 * sizeof(float), (void*)(3 * sizeof(float)));
 	// Unbind all to prevent accidentally modifying them
 	VAO1.Unbind();
 	VBO1.Unbind();
 	EBO1.Unbind();
 
-
+	// Gets ID of uniform called "scale"
+	GLuint uniID = glGetUniformLocation(shaderProgram.ID, "scale");
 
 	// Main while loop
 	while (!glfwWindowShouldClose(window))
