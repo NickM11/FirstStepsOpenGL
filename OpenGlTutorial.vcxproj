@@ -75,8 +75,8 @@
     <LibraryPath>C:\Users\Paul\source\repos\OpenGlTutorial\Libraries\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\Paul\source\repos\OpenGlTutorial\Libraries\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Paul\source\repos\OpenGlTutorial\Libraries\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Paul\source\repos\OpenGlTutorial\Libraries\include;C:\Users\heyho\source\repos\NickM11\FirstStepsOpenGL\Libraries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\heyho\source\repos\NickM11\FirstStepsOpenGL\Libraries\lib;C:\Users\Paul\source\repos\OpenGlTutorial\Libraries\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
